@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "mongodb": "^3.6.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.0.0",
+    "nodemon": "^2.0.6"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "babel src -d bin",
+    "dev": "nodemon --exec babel-node src/index.js"
+  }
+}
