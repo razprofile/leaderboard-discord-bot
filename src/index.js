@@ -57,7 +57,7 @@ client.on('message', async (msg) => {
       return;
     case prefix + 'help':
       const commands = {
-        '!leaderboard': 'Display the discipline challenge',
+        '!leaderboard': 'Display the discipline challenge leaderboard',
         '!success': 'Add a successful day to your score',
         '!help': 'Display this commands meanu',
         '!remove': 'Remove yourself from the discipline challenge',
@@ -105,21 +105,6 @@ client.on('message', async (msg) => {
       }
 
       return;
-    case prefix + 'add' + args[0].match(/\d+/g).join([]):
-      let n = parseInt(args[0].match(/\d+/g).join([]));
-      if (!user) {
-        await getUsers().insertOne({ id: msg.author.id, score: n });
-        user = { id: msg.author.id, score: n };
-      } else {
-        await getUsers().updateOne(
-          { id: user.id },
-          { $set: { score: user.score + n } }
-        );
-      }
-      msg.author.send(
-        'Wow! GOOD FUCKING JOB!, Your score is now ' + (user.score + n)
-      );
-      return;
     case prefix + 'info':
       // const welcomeInfo = {
       //   '**When  does it start?**': 'Jan 1st (or any time you choose to join)',
@@ -136,6 +121,21 @@ client.on('message', async (msg) => {
       //   );
       // msg.channel.send(welcomeEmbed);
       msg.channel.send('pong');
+      return;
+    case prefix + 'add' + args[0].match(/\d+/g).join([]):
+      let n = parseInt(args[0].match(/\d+/g).join([]));
+      if (!user) {
+        await getUsers().insertOne({ id: msg.author.id, score: n });
+        user = { id: msg.author.id, score: n };
+      } else {
+        await getUsers().updateOne(
+          { id: user.id },
+          { $set: { score: user.score + n } }
+        );
+      }
+      msg.author.send(
+        'Wow! GOOD FUCKING JOB!, Your score is now ' + (user.score + n)
+      );
       return;
   }
 });
