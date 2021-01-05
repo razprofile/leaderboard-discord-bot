@@ -121,20 +121,21 @@ client.on('message', async (msg) => {
       );
       return;
     case prefix + 'info':
-      const welcomeInfo = {
-        '**When  does it start?**': 'Jan 1st (or any time you choose to join)',
-        '**When does it end?**': 'After you complete 90 successful days',
-        '**Why should I join**':
-          'Develop the winner mentality and become a finisher',
-        '**Where will it be?**': 'In this text channel (#discipline-challenge)',
-      };
-      const welcomeEmbed = new MessageEmbed()
-        .setTitle('Welcome to the 90 days discipline challenge:muscle:')
-        .setColor('RANDOM')
-        .setDescription(
-          Object.keys(welcomeInfo).map((x) => x + ': ' + welcomeInfo[x])
-        );
-      msg.channel.send(welcomeEmbed);
+      // const welcomeInfo = {
+      //   '**When  does it start?**': 'Jan 1st (or any time you choose to join)',
+      //   '**When does it end?**': 'After you complete 90 successful days',
+      //   '**Why should I join**':
+      //     'Develop the winner mentality and become a finisher',
+      //   '**Where will it be?**': 'In this text channel (#discipline-challenge)',
+      // };
+      // const welcomeEmbed = new MessageEmbed()
+      //   .setTitle('Welcome to the 90 days discipline challenge:muscle:')
+      //   .setColor('RANDOM')
+      //   .setDescription(
+      //     Object.keys(welcomeInfo).map((x) => x + ': ' + welcomeInfo[x])
+      //   );
+      // msg.channel.send(welcomeEmbed);
+      msg.channel.send('pong');
       return;
   }
 });
