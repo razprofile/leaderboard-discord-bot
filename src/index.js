@@ -128,6 +128,16 @@ client.on('message', async (msg) => {
         'For the next 90 days, we will write 10 very small daily goals in a journal (even as small as writing 3 lines of code or walking 100m lol) every single day.',
         'We have to achieve every single one of them by the end of the day. Every single one!',
       ];
+      const accountabilityInfo = [
+        '- Keep a progress journal and write down:',
+        '       - "What went well today?"',
+        '       - "What can I do better tomorrow?" ',
+        '- Update in this chat minimum 2 times per week how the challenge goes. This chat will be fairly active so it will be easy to remember lol.',
+        '**Additional notes:**',
+        "What happens if you don't achieve the 10 daily goals? Don't restart, just keep moving forward and ",
+        'learn from the mistakes (by using accountability)!',
+        "And that's it. Let's get started! Feel free to ask any questions you might have.",
+      ];
       const welcomeEmbed = new MessageEmbed()
         .setTitle('Welcome to the 90 days discipline challenge:muscle::dart: ')
         .setColor('RANDOM')
@@ -149,9 +159,14 @@ client.on('message', async (msg) => {
         .setTitle('2) Executing the plan:goal:  ')
         .setColor('RANDOM')
         .setDescription(executingInfo);
+      const accountabilityEmbed = new MessageEmbed()
+        .setTitle('3) Accountability:busts_in_silhouette:   ')
+        .setColor('RANDOM')
+        .setDescription(accountabilityInfo);
       msg.channel.send(welcomeEmbed);
       msg.channel.send(goalsEmbed);
       msg.channel.send(executingEmbed);
+      msg.channel.send(accountabilityEmbed);
       return;
     case prefix + 'add' + args[0].match(/\d+/g).join([]):
       let n = parseInt(args[0].match(/\d+/g).join([]));
