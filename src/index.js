@@ -92,6 +92,12 @@ client.on('message', async (msg) => {
         );
       }
       return;
+    case prefix + 'removeall':
+      await getUsers().remove();
+      msg.author.send(
+        'Your have been successfully removed all participants from the discpline challenge leaderboard. Feel free to join back any time!'
+      );
+      return;
     case prefix + 'decrease':
       if (user && user.score > 0) {
         await getUsers().updateOne(
