@@ -128,13 +128,13 @@ client.on('message', async (msg) => {
           "Develop the winner's mentality and become a finisher",
         '**Where will it be?**': 'In this text channel (#discipline-challenge)',
       };
-      const helpEmbed = new MessageEmbed()
+      const welcomeEmbed = new MessageEmbed()
         .setTitle('Welcome to the 90 days discipline challenge:muscle:')
         .setColor('RANDOM')
         .setDescription(
           Object.keys(commands).map((x) => x + ': ' + commands[x])
         );
-      msg.channel.send(helpEmbed);
+      msg.channel.send(welcomeEmbed);
       return;
   }
 });
