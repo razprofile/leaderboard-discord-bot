@@ -134,8 +134,7 @@ client.on('message', async (msg) => {
         '\t - "What can I do better tomorrow?" ',
         '- Update in this chat minimum 2 times per week how the challenge goes. This chat will be fairly active so it will be easy to remember lol.',
         '**Additional notes:**',
-        "What happens if you don't achieve the 10 daily goals? Don't restart, just keep moving forward and ",
-        'learn from the mistakes (by using accountability)!',
+        "What happens if you don't achieve the 10 daily goals? Don't restart, just keep moving forward and learn from the mistakes (by using accountability)!",
         "And that's it. Let's get started! Feel free to ask any questions you might have.",
       ];
       const welcomeEmbed = new MessageEmbed()
