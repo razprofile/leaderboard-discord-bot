@@ -96,6 +96,14 @@ client.on('message', async (msg) => {
         'Wow! GOOD FUCKING JOB!, Your score is now ' + (user.score + 7)
       );
       return;
+    case prefix + 'remove':
+      if (!user) {
+        await getUsers().deleteOne({ id: msg.author.id });
+      }
+      msg.author.send(
+        'Your have been successfully removed from the discpline challenge leaderboard. Feel free to join back any time!'
+      );
+      return;
   }
 });
 
