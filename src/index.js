@@ -57,7 +57,7 @@ client.on('message', async (msg) => {
       return;
     case prefix + 'help':
       const commands = {
-        '!leaderboard': 'Display the discipline challenge leaderboard',
+        '!leaderboard': 'Display the discipline challenge',
         '!success': 'Add a successful day to your score',
         '!help': 'Display this commands meanu',
         '!remove': 'Remove yourself from the discipline challenge',
