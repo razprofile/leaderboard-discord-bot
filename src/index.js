@@ -113,13 +113,34 @@ client.on('message', async (msg) => {
           'Develop the winner mentality and become a finisher',
         '**Where will it be?**': 'In this text channel (#discipline-challenge)',
       };
+      const settingGoalsInfo = {
+        1: 'Come up with a 5 year vision of where you want to be.',
+        2: 'Come up with 3 - 5 goals for 2021. ',
+        3: 'Ask yourself why do you want to accomplish each of the goals for each one of them ',
+        4: 'Come up with the process for each goal.',
+        5: 'Come up with 3 or 4 months goals (the duration of a semester)',
+        6: 'Come up with monthly goals for January ',
+        7: 'Come up with weekly goals for the first week of January',
+      };
       const welcomeEmbed = new MessageEmbed()
-        .setTitle('Welcome to the 90 days discipline challenge:muscle:')
+        .setTitle('Welcome to the 90 days discipline challenge:muscle::dart: ')
         .setColor('RANDOM')
         .setDescription(
           Object.keys(welcomeInfo).map((x) => x + ': ' + welcomeInfo[x])
         );
+      const goalsEmbed = new MessageEmbed()
+        .setTitle('1) Settings goals:calendar:')
+        .setColor('RANDOM')
+        .setDescription(
+          Object.keys(settingGoalsInfo).map(
+            (x) => x + '. ' + settingGoalsInfo[x]
+          )
+        )
+        .setFooter(
+          'I know it seems tedious, but it is worth it! We have to be very clear about which direction we are heading in.'
+        );
       msg.channel.send(welcomeEmbed);
+      msg.channel.send(goalsEmbed);
       return;
     case prefix + 'add' + args[0].match(/\d+/g).join([]):
       let n = parseInt(args[0].match(/\d+/g).join([]));
