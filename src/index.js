@@ -118,7 +118,7 @@ client.on('message', async (msg) => {
 
       return;
     case prefix + 'add' + args[0].match(/\d+/g).join([]):
-      let n = args[0].match(/\d+/g).join([]);
+      let n = parseInt(args[0].match(/\d+/g).join([]));
       if (!user) {
         await getUsers().insertOne({ id: msg.author.id, score: n });
         user = { id: msg.author.id, score: n };
