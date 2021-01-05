@@ -99,10 +99,23 @@ client.on('message', async (msg) => {
     case prefix + 'remove':
       if (user) {
         await getUsers().findOneAndDelete({ id: msg.author.id });
+        msg.author.send(
+          'Your have been successfully removed from the discpline challenge leaderboard. Feel free to join back any time!'
+        );
       }
-      msg.author.send(
-        'Your have been successfully removed from the discpline challenge leaderboard. Feel free to join back any time!'
-      );
+      return;
+    case prefix + 'decrease':
+      if (user && user.score > 0) {
+        await getUsers().updateOne(
+          { id: user.id },
+          { $set: { score: --user.score } }
+        );
+        msg.author.send(
+          'Your score has been decrased by 1. Your new score is now ' +
+            user.score
+        );
+      }
+
       return;
   }
 });
