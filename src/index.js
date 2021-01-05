@@ -83,20 +83,6 @@ client.on('message', async (msg) => {
       }
       msg.author.send('Your score has been reset to 0.');
       return;
-    case prefix + 'successw':
-      if (!user) {
-        await getUsers().insertOne({ id: msg.author.id, score: 1 });
-        user = { id: msg.author.id, score: 7 };
-      } else {
-        await getUsers().updateOne(
-          { id: user.id },
-          { $set: { score: user.score + 7 } }
-        );
-      }
-      msg.author.send(
-        'Wow! GOOD FUCKING JOB!, Your score is now ' + (user.score + 7)
-      );
-      return;
     case prefix + 'remove':
       if (user) {
         await getUsers().findOneAndDelete({ id: msg.author.id });
