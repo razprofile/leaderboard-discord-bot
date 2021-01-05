@@ -125,7 +125,7 @@ client.on('message', async (msg) => {
         '**When  does it start?**': 'Jan 1st (or any time you choose to join)',
         '**When does it end?**': 'After you complete 90 successful days',
         '**Why should I join**':
-          "Develop the winner's mentality and become a finisher",
+          'Develop the winner mentality and become a finisher',
         '**Where will it be?**': 'In this text channel (#discipline-challenge)',
       };
       const welcomeEmbed = new MessageEmbed()
