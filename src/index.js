@@ -132,7 +132,7 @@ client.on('message', async (msg) => {
         .setTitle('Welcome to the 90 days discipline challenge:muscle:')
         .setColor('RANDOM')
         .setDescription(
-          Object.keys(commands).map((x) => x + ': ' + commands[x])
+          Object.keys(welcomeInfo).map((x) => x + ': ' + welcomeInfo[x])
         );
       msg.channel.send(welcomeEmbed);
       return;
