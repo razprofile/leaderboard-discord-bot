@@ -130,8 +130,8 @@ client.on('message', async (msg) => {
       ];
       const accountabilityInfo = [
         '- Keep a progress journal and write down:',
-        '       - "What went well today?"',
-        '       - "What can I do better tomorrow?" ',
+        '       \t- "What went well today?"',
+        '       \t- "What can I do better tomorrow?" ',
         '- Update in this chat minimum 2 times per week how the challenge goes. This chat will be fairly active so it will be easy to remember lol.',
         '**Additional notes:**',
         "What happens if you don't achieve the 10 daily goals? Don't restart, just keep moving forward and ",
