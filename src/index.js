@@ -70,8 +70,9 @@ client.on('message', async (msg) => {
       const helpEmbed = new MessageEmbed()
         .setTitle('Leaderboard Commands')
         .setColor('RANDOM')
-        .setDescription(Object.entries(commands).map((x) => x));
-      console.log(Object.entries(commands).map((x) => x)); //Got stuck
+        .setDescription(
+          Object.keys(commands).map((x) => x + ': ' + commands[x])
+        );
       msg.channel.send(helpEmbed);
       return;
     case prefix + 'reset':
