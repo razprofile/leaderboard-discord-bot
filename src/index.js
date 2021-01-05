@@ -122,6 +122,12 @@ client.on('message', async (msg) => {
         6: 'Come up with monthly goals for January ',
         7: 'Come up with weekly goals for the first week of January',
       };
+      const executingInfo = [
+        'Right now I have the loser mentality when it comes to goals (I set up goals and never achieve them).',
+        "The goal of the challenge is to develop the winner's mentality.",
+        'For the next 90 days, we will write 10 very small daily goals in a journal (even as small as writing 3 lines of code or walking 100m lol) every single day.',
+        'We have to achieve every single one of them by the end of the day. Every single one!',
+      ];
       const welcomeEmbed = new MessageEmbed()
         .setTitle('Welcome to the 90 days discipline challenge:muscle::dart: ')
         .setColor('RANDOM')
@@ -139,8 +145,13 @@ client.on('message', async (msg) => {
         .setFooter(
           'I know it seems tedious, but it is worth it! We have to be very clear about which direction we are heading in.'
         );
+      const executingEmbed = new MessageEmbed()
+        .setTitle('2) Executing the plan:goal:  ')
+        .setColor('RANDOM')
+        .setDescription(executingInfo);
       msg.channel.send(welcomeEmbed);
       msg.channel.send(goalsEmbed);
+      msg.channel.send(executingEmbed);
       return;
     case prefix + 'add' + args[0].match(/\d+/g).join([]):
       let n = parseInt(args[0].match(/\d+/g).join([]));
