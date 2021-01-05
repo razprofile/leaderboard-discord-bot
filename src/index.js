@@ -179,13 +179,14 @@ client.on('message', async (msg) => {
         await getUsers().insertOne({ id: msg.author.id, score: n });
         user = { id: msg.author.id, score: n };
       } else {
+        user.score += n;
         await getUsers().updateOne(
           { id: user.id },
-          { $set: { score: user.score + n } }
+          { $set: { score: user.score } }
         );
       }
       msg.author.send(
-        'Wow! GOOD FUCKING JOB!, Your score is now ' + (user.score + n)
+        'Wow! GOOD FUCKING JOB!, Your score is now ' + user.score
       );
       return;
   }
