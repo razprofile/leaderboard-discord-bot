@@ -60,11 +60,12 @@ client.on('message', async (msg) => {
         '!leaderboard': 'Display the discipline challenge leaderboard',
         '!success': 'Successful day',
         '!help': 'Display this commands meanu',
-        '!successw':
-          'Add 7 successful days (not recommended to use for 95% of people)',
         '!remove': 'Remove yourself from the discipline challenge',
-        '!decrease': 'decrease your days count by 1',
+        '!decrease': 'Decrease your days count by 1',
         '!reset': 'reset your days count to 0',
+        '!info': 'Display all the info about the discipline challenge',
+        '!addn':
+          'Add n days to your total score (example: use !add7 to add 7 days)',
       };
       const helpEmbed = new MessageEmbed()
         .setTitle('Leaderboard Commands')
