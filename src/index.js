@@ -98,7 +98,7 @@ client.on('message', async (msg) => {
       return;
     case prefix + 'remove':
       if (!user) {
-        await getUsers().deleteOne({ id: msg.author.id });
+        await getUsers().findOneAndDelete({ id: msg.author.id });
       }
       msg.author.send(
         'Your have been successfully removed from the discpline challenge leaderboard. Feel free to join back any time!'
