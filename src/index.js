@@ -97,7 +97,7 @@ client.on('message', async (msg) => {
       );
       return;
     case prefix + 'remove':
-      if (!user) {
+      if (user) {
         await getUsers().findOneAndDelete({ id: msg.author.id });
       }
       msg.author.send(
