@@ -58,11 +58,11 @@ client.on('message', async (msg) => {
     case prefix + 'help':
       const commands = {
         '!leaderboard': 'Display the discipline challenge leaderboard',
-        '!success': 'Successful day',
+        '!success': 'Add a successful day to your score',
         '!help': 'Display this commands meanu',
         '!remove': 'Remove yourself from the discipline challenge',
         '!decrease': 'Decrease your days count by 1',
-        '!reset': 'reset your days count to 0',
+        '!reset': 'Reset your days count back to 0',
         '!info': 'Display all the info about the discipline challenge',
         '!addn':
           'Add n days to your total score (example: use !add7 to add 7 days)',
@@ -119,6 +119,22 @@ client.on('message', async (msg) => {
       msg.author.send(
         'Wow! GOOD FUCKING JOB!, Your score is now ' + (user.score + n)
       );
+      return;
+    case prefix + 'info':
+      const welcomeInfo = {
+        '**When  does it start?**': 'Jan 1st (or any time you choose to join)',
+        '**When does it end?**': 'After you complete 90 successful days',
+        '**Why should I join**':
+          "Develop the winner's mentality and become a finisher",
+        '**Where will it be?**': 'In this text channel (#discipline-challenge)',
+      };
+      const helpEmbed = new MessageEmbed()
+        .setTitle('Welcome to the 90 days discipline challenge:muscle:')
+        .setColor('RANDOM')
+        .setDescription(
+          Object.keys(commands).map((x) => x + ': ' + commands[x])
+        );
+      msg.channel.send(helpEmbed);
       return;
   }
 });
