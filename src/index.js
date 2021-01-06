@@ -64,8 +64,8 @@ client.on('message', async (msg) => {
         '!decrease': 'Decrease your days count by 1',
         '!reset': 'Reset your days count back to 0',
         '!info': 'Display all the info about the discipline challenge',
-        '!addn':
-          'Add n days to your total score (example: use !add7 to add 7 days)',
+        '!add n':
+          'Add n days to your total score (example: use !add 7 to add 7 days)',
       };
       const helpEmbed = new MessageEmbed()
         .setTitle('Leaderboard Commands')
@@ -173,8 +173,8 @@ client.on('message', async (msg) => {
       msg.channel.send(executingEmbed);
       msg.channel.send(accountabilityEmbed);
       return;
-    case prefix + 'add': // + args[0].match(/\d+/g).join([]):
-      let n = parseInt(args[1]); //.match(/\d+/g).join([]));
+    case prefix + 'add':
+      let n = parseInt(args[1]);
       if (!user) {
         await getUsers().insertOne({ id: msg.author.id, score: n });
         user = { id: msg.author.id, score: n };
