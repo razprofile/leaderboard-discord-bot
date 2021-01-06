@@ -175,6 +175,7 @@ client.on('message', async (msg) => {
       return;
     case prefix + 'add':
       let n = parseInt(args[1]);
+      if (Number.isNaN(n)) return;
       if (!user) {
         await getUsers().insertOne({ id: msg.author.id, score: n });
         user = { id: msg.author.id, score: n };
