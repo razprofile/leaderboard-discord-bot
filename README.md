@@ -6,9 +6,9 @@ my friends to achieve our goals for the new year of 2021. The goal of the challe
 The leaderboard automatically tracks the number of successful days each person has so far (i.e. the number of days they achieved all of their daily goals).
 
 Here are all the leaderboard commands that the discpline challenge leaderbaord currently supports:
-!leaderboard: Display the discipline challenge leaderboard
-!success: Add a successful day to your score
-!help: Display this commands meanu
+!leaderboard: Display the discipline challenge leaderboard \n
+!success: Add a successful day to your score \n
+!help: Display this commands meanu \n
 !remove: Remove yourself from the discipline challenge
 !removeall: Remove all participants from the board
 !decrease: Decrease your days count by 1
