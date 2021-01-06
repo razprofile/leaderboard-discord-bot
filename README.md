@@ -5,7 +5,7 @@ my friends to achieve our goals for the new year of 2021. The goal of the challe
 
 The leaderboard automatically tracks the number of successful days each person has so far (i.e. the number of days they achieved all of their daily goals).
 
-Here are all the leaderboard commands that the discpline challenge leaderbaord currently supports: <br />
+Here are all the leaderboard commands that the discpline challenge leaderbaord currently supports: <br /> <br />
 !leaderboard: Display the discipline challenge leaderboard <br />
 !success: Add a successful day to your score <br />
 !help: Display this commands meanu <br />
