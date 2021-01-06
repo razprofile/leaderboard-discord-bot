@@ -173,8 +173,8 @@ client.on('message', async (msg) => {
       msg.channel.send(executingEmbed);
       msg.channel.send(accountabilityEmbed);
       return;
-    case prefix + 'add' + args[0].match(/\d+/g).join([]):
-      let n = parseInt(args[0].match(/\d+/g).join([]));
+    case prefix + 'add': // + args[0].match(/\d+/g).join([]):
+      let n = parseInt(args[1]); //.match(/\d+/g).join([]));
       if (!user) {
         await getUsers().insertOne({ id: msg.author.id, score: n });
         user = { id: msg.author.id, score: n };
