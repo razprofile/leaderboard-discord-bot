@@ -10,12 +10,12 @@ client.on('message', async (msg) => {
   if (msg.author.bot) return;
   const args = msg.content.split(' ');
   let leaderboardTitle;
+  let user = await getUser(msg.author.id);
   if (msg.channel.toString === '#leaderboard') {
     msg.channel.send('lol');
-    )
     leaderboardTitle = 'lol';
   }
-  let user = await getUser(msg.author.id);
+
   switch (args[0]) {
     case prefix + 'lb':
     case prefix + 'leaderboard':
