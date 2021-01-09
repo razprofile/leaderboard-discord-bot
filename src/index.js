@@ -76,7 +76,9 @@ client.on('message', async (msg) => {
           Object.keys(commands).map((x) => x + ': ' + commands[x])
         );
       msg.channel.send(helpEmbed);
-      msg.channel.send('You message has been sent to ' + msg.channel);
+      msg.channel.send(
+        'You message has been sent to ' + msg.channel.toString()
+      );
       return;
     case prefix + 'reset':
       if (!user) {
