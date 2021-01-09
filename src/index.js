@@ -12,7 +12,8 @@ client.on('message', async (msg) => {
   let leaderboardTitle;
   let user = await getUser(msg.author.id);
   msg.channel.send(msg.channel.toString());
-  msg.channel.send(msg.channel.toString() === '#leaderboard');
+  msg.channel.send(msg.channel);
+  msg.channel.send(msg.channel === '#leaderboard');
   if (msg.channel.toString() === '#leaderboard') {
     msg.channel.send('lol');
     leaderboardTitle = 'lol';
