@@ -77,7 +77,7 @@ client.on('message', async (msg) => {
         );
       msg.channel.send(helpEmbed);
       msg.channel.send(
-        'You message has been sent to ' + msg.channel.toString()
+        'You message has been sent to ' + msg.channel.toString().slice(1)
       );
       return;
     case prefix + 'reset':
