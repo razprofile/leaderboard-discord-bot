@@ -12,8 +12,7 @@ client.on('message', async (msg) => {
   let leaderboardTitle;
   let user = await getUser(msg.author.id);
   if (msg.channel.id === '795023589992693770') {
-    msg.channel.send('lol');
-    leaderboardTitle = 'lol';
+    leaderboardTitle = '🎯Discipline Challenge Leaderboard🎯';
   }
 
   switch (args[0]) {
@@ -26,9 +25,7 @@ client.on('message', async (msg) => {
         .limit(maxUsers)
         .toArray();
       const embed = new MessageEmbed()
-        .setTitle(
-          '🎯Discipline Challenge Leaderboard🎯' + ' ' + leaderboardTitle
-        )
+        .setTitle(leaderboardTitle)
         .setColor('RANDOM')
         .setDescription(users.map((x) => `<@${x.id}>: ${x.score}`).join('\n'))
         .setFooter(
