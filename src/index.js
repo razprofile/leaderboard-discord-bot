@@ -9,10 +9,10 @@ client.on('ready', () => {
 client.on('message', async (msg) => {
   if (msg.author.bot) return;
   const args = msg.content.split(' ');
-  let leaderboardTitle;
+  let leaderboardTitle = '🎯Discipline Challenge Leaderboard🎯';
   let user = await getUser(msg.author.id);
   if (msg.channel.id === '795023589992693770') {
-    leaderboardTitle = '🎯Discipline Challenge Leaderboard🎯';
+    leaderboardTitle = 'NoFap Challenge Leaderboard🎯';
   }
 
   switch (args[0]) {
