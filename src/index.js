@@ -11,6 +11,7 @@ client.on('message', async (msg) => {
   const args = msg.content.split(' ');
   let user = await getUser(msg.author.id);
   switch (args[0]) {
+    case prefix + 'lb':
     case prefix + 'leaderboard':
       const maxUsers = 10;
       const users = await getUsers()
@@ -30,6 +31,7 @@ client.on('message', async (msg) => {
         );
       msg.channel.send(embed);
       return;
+    case prefix + 's':
     case prefix + 'success':
       if (!user) {
         await getUsers().insertOne({ id: msg.author.id, score: 1 });
@@ -57,8 +59,8 @@ client.on('message', async (msg) => {
       return;
     case prefix + 'help':
       const commands = {
-        '!leaderboard': 'Display the discipline challenge leaderboard',
-        '!success': 'Add a successful day to your score',
+        '!leaderboard (or !lb)': 'Display the discipline challenge leaderboard',
+        '!success (or !s)': 'Add a successful day to your score',
         '!help': 'Display this commands meanu',
         '!remove': 'Remove yourself from the discipline challenge',
         '!decrease': 'Decrease your days count by 1',
