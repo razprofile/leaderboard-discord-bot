@@ -9,6 +9,10 @@ client.on('ready', () => {
 client.on('message', async (msg) => {
   if (msg.author.bot) return;
   const args = msg.content.split(' ');
+  let leaderboardTitle;
+  if (msg.channel.toString === '#leaderboard') {
+    leaderboardTitle = 'lol';
+  }
   let user = await getUser(msg.author.id);
   switch (args[0]) {
     case prefix + 'lb':
@@ -20,7 +24,9 @@ client.on('message', async (msg) => {
         .limit(maxUsers)
         .toArray();
       const embed = new MessageEmbed()
-        .setTitle('🎯Discipline Challenge Leaderboard🎯')
+        .setTitle(
+          '🎯Discipline Challenge Leaderboard🎯' + ' ' + leaderboardTitle
+        )
         .setColor('RANDOM')
         .setDescription(users.map((x) => `<@${x.id}>: ${x.score}`).join('\n'))
         .setFooter(
@@ -76,9 +82,6 @@ client.on('message', async (msg) => {
           Object.keys(commands).map((x) => x + ': ' + commands[x])
         );
       msg.channel.send(helpEmbed);
-      msg.channel.send(
-        'You message has been sent to ' + msg.channel.toString().slice(1)
-      );
       return;
     case prefix + 'reset':
       if (!user) {
