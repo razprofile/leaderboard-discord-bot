@@ -11,16 +11,15 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
     (channel) => channel.id === '800224285976297482'
   );
   channel.send('Joined session lol');
-  let newUserChannel = newMember.voiceChannel;
-  let oldUserChannel = oldMember.voiceChannel;
+  // let newUserChannel = newMember.voiceChannel;
+  // let oldUserChannel = oldMember.voiceChannel;
 
-  if (oldUserChannel === undefined && newUserChannel !== undefined) {
-    channel.send('Joined session lmao');
-  }
+  // if (oldUserChannel === undefined && newUserChannel !== undefined) {
+  //   channel.send('Joined session lmao');
+  // }
 });
 
 client.on('message', async (msg) => {
-  alert('lol');
   if (msg.author.bot) return;
   const args = msg.content.split(' ');
   let leaderboardTitle = '🎯Discipline Challenge Leaderboard🎯';
