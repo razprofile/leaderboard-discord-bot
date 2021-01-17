@@ -20,7 +20,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
 });
 
 client.on('message', async (msg) => {
-  console.log('lol');
+  alert('lol');
   if (msg.author.bot) return;
   const args = msg.content.split(' ');
   let leaderboardTitle = '🎯Discipline Challenge Leaderboard🎯';
