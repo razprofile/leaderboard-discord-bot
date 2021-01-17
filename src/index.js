@@ -11,8 +11,8 @@ client.on('voiceStateUpdate', (oldState, newState) => {
     (channel) => channel.id === '800224285976297482'
   );
   channel.send('Joined session lol');
-  let newUserChannel = newState.channel;
-  let oldUserChannel = oldState.channel;
+  let newUserChannel = newState.channelID;
+  let oldUserChannel = oldState.channelID;
 
   if (oldUserChannel === undefined && newUserChannel !== undefined) {
     channel.send('Joined session lmao');
