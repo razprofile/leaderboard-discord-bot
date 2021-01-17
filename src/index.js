@@ -15,7 +15,6 @@ client.on('voiceStateUpdate', async (oldState, newState) => {
   let channelName = newState.channel.name;
   let MembersCount = newState.channel.members.size;
   channel.send('lol');
-  channel.send('initialMembersCount is ' + initialMembersCount);
   if (
     ((oldUserChannel === null && newUserChannel !== null) ||
       (oldUserChannel !== null && newUserChannel !== null)) &&
