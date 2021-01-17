@@ -16,7 +16,7 @@ client.on('voiceStateUpdate', (oldState, newState) => {
 
   if (oldUserChannel === null && newUserChannel !== null) {
     channel.send(
-      '@everyone Come join to' + channelName + "Voice channel. Let's do it!"
+      '@everyone Come join to' + channelName + ' voice channel. Lets do it!'
     );
   }
 });
