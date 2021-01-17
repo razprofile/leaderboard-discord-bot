@@ -13,7 +13,7 @@ client.on('voiceStateUpdate', (oldState, newState) => {
   let newUserChannel = newState.channelID;
   let oldUserChannel = oldState.channelID;
   let channelName = newState.channel.name;
-
+  channel.send('Change to voiceStateUpdate');
   if (
     (oldUserChannel === null && newUserChannel !== null) ||
     (oldUserChannel !== null && newUserChannel !== null)
@@ -23,6 +23,8 @@ client.on('voiceStateUpdate', (oldState, newState) => {
         channelName +
         ' voice channel. Lets do it!'
     );
+  } else if (newUserChannel === null) {
+    channel.send('Someone left the voice channel');
   }
 });
 
