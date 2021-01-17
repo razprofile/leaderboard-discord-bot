@@ -20,7 +20,9 @@ client.on('voiceStateUpdate', async (oldState, newState) => {
     MembersCount === 1
   ) {
     channel.send(
-      'Come join to the ' + channelName + ' voice channel. Lets do it!'
+      '@everyone Come join to the ' +
+        channelName +
+        ' voice channel. Lets do it!'
     );
   }
 });
