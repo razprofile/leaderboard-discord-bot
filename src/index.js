@@ -7,16 +7,18 @@ client.on('ready', () => {
 });
 
 client.on('voiceStateUpdate', (oldMember, newMember) => {
-  // const channel = client.channels.cache.find(
-  //   (channel) => channel.id === '787066512049176579'
-  // );
-  // channel.send('Joined session');
+  const channel = client.channels.cache.find(
+    (channel) => channel.id === '800224285976297482'
+  );
+  channel.send('Joined session lol');
   let newUserChannel = newMember.voiceChannel;
   let oldUserChannel = oldMember.voiceChannel;
 
   if (oldUserChannel === undefined && newUserChannel !== undefined) {
-    channel = client.channels.cache.get('787066512049176579');
-    channel.send('Joined session');
+    const channel = client.channels.cache.find(
+      (channel) => channel.id === '800224285976297482'
+    );
+    channel.send('Joined session lmao');
   }
 });
 
