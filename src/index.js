@@ -15,9 +15,6 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
   let oldUserChannel = oldMember.voiceChannel;
 
   if (oldUserChannel === undefined && newUserChannel !== undefined) {
-    const channel = client.channels.cache.find(
-      (channel) => channel.id === '800224285976297482'
-    );
     channel.send('Joined session lmao');
   }
 });
