@@ -20,7 +20,7 @@ client.on('voiceStateUpdate', async (oldState, newState) => {
     MembersCount === 1
   ) {
     channel.send(
-      '@everyone Come join to the ' +
+      '@Notifications Come join to the ' +
         channelName +
         ' voice channel. Lets do it!'
     );
