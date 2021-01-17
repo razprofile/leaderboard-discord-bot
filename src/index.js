@@ -17,9 +17,12 @@ client.on('voiceStateUpdate', async (oldState, newState) => {
   channel.send('lol');
   channel.send('initialMembersCount is ' + initialMembersCount);
   if (
-    ((oldUserChannel === null && newUserChannel !== null) ||
-      (oldUserChannel !== null && newUserChannel !== null)) &&
-    initialMembersCount === 0
+    (oldUserChannel === null &&
+      newUserChannel !== null &&
+      initialMembersCount === 1) ||
+    (oldUserChannel !== null &&
+      newUserChannel !== null &&
+      initialMembersCount === 0)
   ) {
     channel.send(
       'Come join to the ' + channelName + ' voice channel. Lets do it!'
