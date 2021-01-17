@@ -22,7 +22,7 @@ client.on('voiceStateUpdate', async (oldState, newState) => {
   ) {
     channel.send(
       `<@&${roleId}>` +
-        'Come join to the ' +
+        ' Come join to the ' +
         channelName +
         ' voice channel. Lets do it!'
     );
