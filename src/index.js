@@ -6,6 +6,16 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
+client.on('voiceStateUpdate', (oldMember, newMember) => {
+  let newUserChannel = newMember.voiceChannel;
+  let oldUserChannel = oldMember.voiceChannel;
+
+  if (oldUserChannel === undefined && newUserChannel !== undefined) {
+    channel = client.channels.cache.get('787066512049176579');
+    channel.send('Joined session');
+  }
+});
+
 client.on('message', async (msg) => {
   if (msg.author.bot) return;
   const args = msg.content.split(' ');

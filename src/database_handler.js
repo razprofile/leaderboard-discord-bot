@@ -8,6 +8,7 @@ const url = `mongodb+srv://main:EkIfMWpQYxoHUaTa@maincluster.vfqdj.mongodb.net/$
 // EkIfMWpQYxoHUaTa
 
 const collectionName = 'users';
+
 /**
  * @type {Db}
  */
@@ -25,3 +26,7 @@ export const getDatabse = () => db;
 export const getUsers = () => db.collection(collectionName);
 
 export const getUser = (id) => getUsers().findOne({ id });
+
+export const getCollection = (id) => {
+  console.log(db.runCommand({ listCollections: 1 }));
+};
