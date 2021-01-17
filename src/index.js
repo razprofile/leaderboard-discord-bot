@@ -6,15 +6,15 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('voiceStateUpdate', (oldMember, newMember) => {
+client.on('voiceStateUpdate', (oldState, newState) => {
   const channel = client.channels.cache.find(
     (channel) => channel.id === '800224285976297482'
   );
   channel.send('Joined session lol');
-  let newUserChannel = newMember.data;
-  let oldUserChannel = oldMember.data;
+  let newUserChannel = newState.channel;
+  let oldUserChannel = oldState.channel;
 
-  if (oldUserChannel === undefined && newUserChannel === undefined) {
+  if (oldUserChannel === undefined && newUserChannel !== undefined) {
     channel.send('Joined session lmao');
   }
 });
