@@ -13,6 +13,7 @@ client.on('voiceStateUpdate', async (oldState, newState) => {
   let newUserChannel = newState.channelID;
   let oldUserChannel = oldState.channelID;
   let channelName = newState.channel.name;
+  const roleId = '800494559326765107';
   let MembersCount = newState.channel.members.size;
   if (
     ((oldUserChannel === null && newUserChannel !== null) ||
@@ -20,7 +21,8 @@ client.on('voiceStateUpdate', async (oldState, newState) => {
     MembersCount === 1
   ) {
     channel.send(
-      '@Notifications Come join to the ' +
+      `<@&${roleId}>` +
+        'Come join to the ' +
         channelName +
         ' voice channel. Lets do it!'
     );
