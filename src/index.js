@@ -7,7 +7,8 @@ client.on('ready', () => {
 });
 
 client.on('voiceStateUpdate', (oldMember, newMember) => {
-  alert('lol');
+  channel = client.channels.cache.get('787066512049176579');
+  channel.send('Joined session');
   let newUserChannel = newMember.voiceChannel;
   let oldUserChannel = oldMember.voiceChannel;
 
