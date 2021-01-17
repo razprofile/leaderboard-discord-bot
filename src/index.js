@@ -8,7 +8,7 @@ client.on('ready', () => {
 
 client.on('voiceStateUpdate', async (oldState, newState) => {
   const channel = client.channels.cache.find(
-    (channel) => channel.id === '795004891851653154'
+    (channel) => channel.id === '787066512049176579'
   );
   let newUserChannel = newState.channelID;
   let oldUserChannel = oldState.channelID;
