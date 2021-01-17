@@ -10,12 +10,17 @@ client.on('voiceStateUpdate', (oldState, newState) => {
   const channel = client.channels.cache.find(
     (channel) => channel.id === '800224285976297482'
   );
-  channel.send('Change to voiceStateUpdate');
   let newUserChannel = newState.channelID;
   let oldUserChannel = oldState.channelID;
+  let channelName = newState.channel.name;
 
   if (oldUserChannel === null && newUserChannel !== null) {
-    channel.send('Joined session with id ' + newState.channelID);
+    channel.send(
+      '@everyone, come join the session! id ' +
+        newUserChannel +
+        ' and with the name of ' +
+        channelName
+    );
   }
 });
 
