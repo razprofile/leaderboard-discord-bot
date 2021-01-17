@@ -10,16 +10,9 @@ client.on('voiceStateUpdate', async (oldState, newState) => {
   const channel = client.channels.cache.find(
     (channel) => channel.id === '795004891851653154'
   );
-  channel.send('update');
   let newUserChannel = newState.channelID;
   let oldUserChannel = oldState.channelID;
   let channelName = newState.channel.name;
-  channel.send(
-    'oldUserChannel is ' +
-      oldUserChannel +
-      ' and newUserChannel is ' +
-      newUserChannel
-  );
   if (
     (oldUserChannel === null && newUserChannel !== null) ||
     (oldUserChannel !== null && newUserChannel !== null)
