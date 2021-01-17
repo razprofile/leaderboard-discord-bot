@@ -14,9 +14,14 @@ client.on('voiceStateUpdate', (oldState, newState) => {
   let oldUserChannel = oldState.channelID;
   let channelName = newState.channel.name;
 
-  if (oldUserChannel === null && newUserChannel !== null) {
+  if (
+    (oldUserChannel === null && newUserChannel !== null) ||
+    (oldUserChannel !== null && newUserChannel !== null)
+  ) {
     channel.send(
-      '@everyone Come join to' + channelName + ' voice channel. Lets do it!'
+      '@everyone Come join to the ' +
+        channelName +
+        ' voice channel. Lets do it!'
     );
   }
 });
