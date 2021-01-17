@@ -7,6 +7,7 @@ client.on('ready', () => {
 });
 
 client.on('voiceStateUpdate', (oldMember, newMember) => {
+  console.log('lol');
   channel = client.channels.cache.get('787066512049176579');
   channel.send('Joined session');
   let newUserChannel = newMember.voiceChannel;
@@ -19,6 +20,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
 });
 
 client.on('message', async (msg) => {
+  console.log('lol');
   if (msg.author.bot) return;
   const args = msg.content.split(' ');
   let leaderboardTitle = '🎯Discipline Challenge Leaderboard🎯';
