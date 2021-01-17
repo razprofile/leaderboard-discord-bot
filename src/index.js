@@ -8,7 +8,7 @@ client.on('ready', () => {
 
 client.on('voiceStateUpdate', (oldMember, newMember) => {
   const channel = client.channels.cache.find(
-    (channel) => (channel.id = '787066512049176579')
+    (channel) => channel.id === '787066512049176579'
   );
   channel.send('Joined session');
   let newUserChannel = newMember.voiceChannel;
