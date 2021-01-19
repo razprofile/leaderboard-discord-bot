@@ -13,7 +13,7 @@ client.on('voiceStateUpdate', async (oldState, newState) => {
   let newUserChannel = newState.channelID;
   let oldUserChannel = oldState.channelID;
   let channelName = newState.channel.name;
-  const roleId = '800494559326765107';
+  // const roleId = '800494559326765107';
   let MembersCount = newState.channel.members.size;
   if (
     ((oldUserChannel === null && newUserChannel !== null) ||
@@ -21,10 +21,8 @@ client.on('voiceStateUpdate', async (oldState, newState) => {
     MembersCount === 1
   ) {
     channel.send(
-      `<@&${roleId}>` +
-        ' Come join to the ' +
-        channelName +
-        ' voice channel. Lets do it!'
+      // `<@&${roleId}>` +
+      ' Come join to the ' + channelName + ' voice channel. Lets do it!'
     );
   }
 });
@@ -115,11 +113,16 @@ client.on('message', async (msg) => {
       msg.author.send('Your score has been reset to 0.');
       return;
     case prefix + 'remove':
-      if (user) {
+      let n = parseInt(args[1]);
+      let usersList = await getUsers().find().sort({ score: -1 }).toArray();
+      if (user && Number.isNaN(n)) {
         await getUsers().findOneAndDelete({ id: msg.author.id });
         msg.author.send(
           'Your have been successfully removed from the discpline challenge leaderboard. Feel free to join back any time!'
         );
+      } else if (n > 0 && n < usersList.length) {
+        let userToRemove = usersList[n - 1];
+        await getUsers().findOneAndDelete({ id: userToRemove.id });
       }
       return;
     case prefix + 'removeall':
