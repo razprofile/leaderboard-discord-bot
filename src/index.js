@@ -207,13 +207,13 @@ client.on('message', async (msg) => {
       msg.channel.send(accountabilityEmbed);
       return;
     case prefix + 'add':
-      let n = parseInt(args[1]);
-      if (Number.isNaN(n)) return;
+      let pointsToAdd = parseInt(args[1]);
+      if (Number.isNaN(pointsToAdd)) return;
       if (!user) {
-        await getUsers().insertOne({ id: msg.author.id, score: n });
-        user = { id: msg.author.id, score: n };
+        await getUsers().insertOne({ id: msg.author.id, score: pointsToAdd });
+        user = { id: msg.author.id, score: pointsToAdd };
       } else {
-        user.score += n;
+        user.score += pointsToAdd;
         await getUsers().updateOne(
           { id: user.id },
           { $set: { score: user.score } }
